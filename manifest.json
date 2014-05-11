@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Bye Bye Big Data",
+    "description": "Bye Bye Big Data hides all articles mentioning 'big data' in the title or URL.",
+    "author": "Greg Reda <greg@gregreda.com>",
+    "homepage_url": "http://www.gregreda.com",
+    "version": "0.1",
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "browser_action": {
+        "default_icon": "icon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["jquery-1.11.1.min.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": ["tabs", "http://*/*", "https://*/*"]
+}
